@@ -18,6 +18,8 @@ class CountriesTable extends Migration{
             $table->string('google_maps_link');
             $table->double('latitude', 8);
             $table->double('longitude', 8);
+            $table->string('area_square_kilometers');
+            $table->string('area_square_miles');
             $table->foreign('continent_id')->references('id')->on('continents')->cascadeOnDelete();
         });
 

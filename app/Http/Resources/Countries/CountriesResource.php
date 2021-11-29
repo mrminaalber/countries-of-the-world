@@ -23,6 +23,10 @@ class CountriesResource extends JsonResource{
             ],
             'language' => $this->language,
             'area_code' => $this->info->area_code,
+            'area' => [
+                'square_kilometers' => $this->info->area_square_kilometers,
+                'square_miles' => $this->info->area_square_miles
+            ],
             'google_maps' => [
                 'link' => $this->info->google_maps_link,
                 'latitude' => $this->info->latitude,
