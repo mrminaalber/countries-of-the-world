@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContinentTranslation extends Model
-{
+class ContinentTranslation extends Model{
     protected $table = 'continents_translations';
     protected $fillable = [];
     protected $hidden = ['id', 'continent_id', 'locale'];

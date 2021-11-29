@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Continents;
 
+use App\Http\Controllers\Controller;
 use App\Models\ContinentTranslation;
 use Illuminate\Http\Request;
-use App\Http\Resources\ContinentsResource;
+use App\Http\Resources\Continents\ContinentsResource;
 
-class ContinentsController extends Controller
-{
+class ContinentsController extends Controller{
     protected $model;
 
-    public function __construct(ContinentTranslation $ContinentTranslation)
-    {
+    public function __construct(ContinentTranslation $ContinentTranslation){
         $this->model = $ContinentTranslation;
     }
 

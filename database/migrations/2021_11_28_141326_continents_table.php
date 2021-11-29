@@ -4,23 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ContinentsTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('continents', function (Blueprint $table) {
+class ContinentsTable extends Migration{
+    public function up(){
+        Schema::create('continents', function (Blueprint $table){
             $table->id();
             $table->string('code')->unique();
             $table->string('area_square_kilometers');
             $table->string('area_square_miles');
         });
 
-        Schema::create('continents_translations', function (Blueprint $table) {
+        Schema::create('continents_translations', function (Blueprint $table){
             $table->id();
             $table->bigInteger('continent_id')->index()->unsigned();
             $table->string('locale')->index();
@@ -31,13 +24,7 @@ class ContinentsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down(){
         Schema::drop('continents_translations');
         Schema::drop('continents');
     }
