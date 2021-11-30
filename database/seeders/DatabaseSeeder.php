@@ -9,5 +9,6 @@ class DatabaseSeeder extends Seeder{
         $this->call(AppLanguageSeeder::class);
         $this->call(ContinentSeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(CitySeeder::class);
     }
 }
