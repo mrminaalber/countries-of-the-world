@@ -11,6 +11,7 @@ $router->group(['prefix' => 'continents', 'namespace' => 'Continents'], function
 
 $router->group(['prefix' => 'countries', 'namespace' => 'Countries'], function () use ($router) {
     $router->get('/', 'CountriesController@getCountries');
+    $router->get('/{countryCode}/cities', 'CountriesController@getCountryCities');
 });
 
 $router->group(['prefix' => 'cities', 'namespace' => 'Cities'], function () use ($router) {
