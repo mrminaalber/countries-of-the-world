@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Countries\CountriesResource;
 
 class CountriesController extends Controller{
-    protected $model;
+    protected $CountryTranslation;
 
     public function __construct(CountryTranslation $CountryTranslation){
-        $this->model = $CountryTranslation;
+        $this->CountryTranslation = $CountryTranslation;
     }
 
     public function getCountries(Request $request){
-        $countries = $this->model::with('info')
+        $countries = $this->CountryTranslation::with('info')
                           ->with(['info.continent' => function($q) use ($request){
                               $q->where('locale', $request->lang ?: 'en');
                           }])

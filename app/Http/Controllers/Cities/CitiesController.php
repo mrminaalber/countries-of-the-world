@@ -11,20 +11,17 @@ class CitiesController extends Controller{
     protected $model;
 
     public function __construct(CityTranslation $CityTranslation){
-        $this->model = $CityTranslation;
+        $this->CityTranslation = $CityTranslation;
     }
 
     public function getCities(Request $request){
-        $Cities = $this->model::with('info')
-                          ->with(['info.continent' => function($q) use ($request){
+        $cities = $this->CityTranslation::with('info')
+                          ->with(['info.country' => function($q) use ($request){
                               $q->where('locale', $request->lang ?: 'en');
                           }])
-                          ->select([
-                              'name', 'city_id', 'locale', 'currency_short', 'currency_long',
-                              'language'
-                          ])
+                          ->select(['name', 'city_id', 'locale'])
                           ->where('locale', $request->lang ?: 'en')
                           ->orderBy('name')->get();
-        return CitiesResource::collection($Cities);
+        return CitiesResource::collection($cities);
     }
 }
