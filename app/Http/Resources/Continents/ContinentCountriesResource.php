@@ -23,16 +23,7 @@ class ContinentCountriesResource extends JsonResource{
             ],
             'capital' => '',
             'language' => $this->locale[0]->language,
-            'area_code' => $this->area_code,
-            'area' => [
-                'square_kilometers' => $this->area_square_kilometers,
-                'square_miles' => $this->area_square_miles
-            ],
-            'google_maps' => [
-                'link' => $this->google_maps_link,
-                'latitude' => $this->latitude,
-                'longitude' => $this->longitude,
-            ]
+            'area_code' => $this->area_code
         ];
     }
 }

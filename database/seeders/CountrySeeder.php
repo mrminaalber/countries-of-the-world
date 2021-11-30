@@ -16,12 +16,7 @@ class CountrySeeder extends Seeder{
                 'area_code' => '+1',
                 'currency_symbol' => '$',
                 'flag_png' => 'https://flagcdn.com/w320/us.png',
-                'flag_svg' => 'https://flagcdn.com/us.svg',
-                'google_maps_link' => 'https://goo.gl/maps/nwFwa9VbF5yV1qsG7',
-                'latitude' => 37.2755783,
-                'longitude' => -104.6571311,
-                'area_square_kilometers' => '9,372,610',
-                'area_square_miles' => '3,618,783'
+                'flag_svg' => 'https://flagcdn.com/us.svg'
             ],
             [
                 'id' => 2,
@@ -31,12 +26,7 @@ class CountrySeeder extends Seeder{
                 'area_code' => '+20',
                 'currency_symbol' => '£',
                 'flag_png' => 'https://flagcdn.com/w320/eg.png',
-                'flag_svg' => 'https://flagcdn.com/eg.svg',
-                'google_maps_link' => 'https://goo.gl/maps/3dmMKaJzyJVqvbA49',
-                'latitude' => 26.844829,
-                'longitude' => 26.3840401,
-                'area_square_kilometers' => '1,002,450',
-                'area_square_miles' => '387,048'
+                'flag_svg' => 'https://flagcdn.com/eg.svg'
             ]
         ]);
 

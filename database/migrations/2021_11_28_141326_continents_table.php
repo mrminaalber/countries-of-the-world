@@ -9,8 +9,6 @@ class ContinentsTable extends Migration{
         Schema::create('continents', function (Blueprint $table){
             $table->id();
             $table->string('code')->unique();
-            $table->string('area_square_kilometers');
-            $table->string('area_square_miles');
         });
 
         Schema::create('continents_translations', function (Blueprint $table){

@@ -10,45 +10,31 @@ class ContinentSeeder extends Seeder{
         DB::table('continents')->insert([
             [
                 'id' => 1,
-                'code' => 'AS',
-                'area_square_kilometers' => '44,614,000',
-                'area_square_miles' => '17,226,000'
+                'code' => 'AS'
             ],
             [
                 'id' => 2,
-                'code' => 'AF',
-                'area_square_kilometers' => '30,365,000',
-                'area_square_miles' => '11,724,000'
+                'code' => 'AF'
             ],
             [
                 'id' => 3,
-                'code' => 'NA',
-                'area_square_kilometers' => '24,230,000',
-                'area_square_miles' => '9,360,000'
+                'code' => 'NA'
             ],
             [
                 'id' => 4,
-                'code' => 'SA',
-                'area_square_kilometers' => '17,814,000',
-                'area_square_miles' => '6,878,000'
+                'code' => 'SA'
             ],
             [
                 'id' => 5,
-                'code' => 'AN',
-                'area_square_kilometers' => '14,200,000',
-                'area_square_miles' => '5,500,000'
+                'code' => 'AN'
             ],
             [
                 'id' => 6,
-                'code' => 'EU',
-                'area_square_kilometers' => '10,000,000',
-                'area_square_miles' => '3,900,000'
+                'code' => 'EU'
             ],
             [
                 'id' => 7,
-                'code' => 'OC',
-                'area_square_kilometers' => '8,510,900',
-                'area_square_miles' => '3,286,100'
+                'code' => 'OC'
             ]
         ]);
 

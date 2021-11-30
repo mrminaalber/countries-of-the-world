@@ -24,7 +24,7 @@ class ContinentsController extends Controller{
     }
 
     public function getContinents(Request $request){
-        $continents = $this->ContinentTranslation::with('info:id,code,area_square_kilometers,area_square_miles')
+        $continents = $this->ContinentTranslation::with('info:id,code')
                            ->select(['name', 'continent_id', 'locale'])
                            ->where('locale', $request->lang ?: 'en')
                            ->orderBy('name')->get();
