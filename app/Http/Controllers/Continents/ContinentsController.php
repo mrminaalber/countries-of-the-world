@@ -34,10 +34,11 @@ class ContinentsController extends Controller{
     public function getContinentCountries(Request $request, $continentCode){
         $continentId = $this->Continent::where('code', $continentCode)->firstOrFail('id');
         $continentCountries = $this->Country::where('continent_id', $continentId->id)
-                                    ->with(['locale' => function($q) use ($request){
+                                   ->with(['locale' => function($q) use ($request){
                                         $q->where('locale', $request->lang ?: 'en');
-                                    }])
-                                    ->get();
+                                        $q->select(['name', 'country_id', 'currency_short','currency_long']);
+                                   }])
+                                   ->select('id')->get();
         return ContinentCountriesResource::collection($continentCountries);
     }
 }

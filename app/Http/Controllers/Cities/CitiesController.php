@@ -15,13 +15,16 @@ class CitiesController extends Controller{
     }
 
     public function getCities(Request $request){
-        $cities = $this->CityTranslation::with('info')
-                          ->with(['info.country' => function($q) use ($request){
-                              $q->where('locale', $request->lang ?: 'en');
-                          }])
-                          ->select(['name', 'city_id', 'locale'])
-                          ->where('locale', $request->lang ?: 'en')
-                          ->orderBy('name')->get();
+        $cities = $this->CityTranslation::with(['info' => function($q) use ($request){
+                            $q->select('id', 'country_id');
+                            $q->with(['country' => function($q) use ($request){
+                                $q->where('locale', $request->lang ?: 'en');
+                                $q->select('country_id', 'name');
+                            }]);
+                       }])
+                       ->select(['name', 'city_id', 'locale'])
+                       ->where('locale', $request->lang ?: 'en')
+                       ->orderBy('name')->get();
         return CitiesResource::collection($cities);
     }
 }

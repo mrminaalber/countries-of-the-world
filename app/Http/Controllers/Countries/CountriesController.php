@@ -26,27 +26,31 @@ class CountriesController extends Controller{
     }
 
     public function getCountries(Request $request){
-        $countries = $this->CountryTranslation::with('info')
-                          ->with(['info.continent' => function($q) use ($request){
-                              $q->where('locale', $request->lang ?: 'en');
+        $countries = $this->CountryTranslation::with(['info' => function($q) use ($request){
+                                $q->select(
+                                    'id', 'continent_id', 'alpha_2_code', 'alpha_3_code',
+                                    'area_code', 'currency_symbol', 'flag_png', 'flag_svg'
+                                );
+                                $q->with(['continent' => function($q) use ($request){
+                                    $q->where('locale', $request->lang ?: 'en')
+                                      ->select('continent_id', 'name');
+                                }]);
                           }])
-                          ->select([
-                              'name', 'country_id', 'locale', 'currency_short', 'currency_long',
-                              'language'
-                          ])
                           ->where('locale', $request->lang ?: 'en')
+                          ->select(['name', 'country_id', 'currency_short', 'currency_long'])
                           ->orderBy('name')->get();
         return CountriesResource::collection($countries);
     }
 
     public function getCountryCities(Request $request, $countryCode){
         $countryId = $this->Country::where('alpha_2_code', $countryCode)
-                                     ->orWhere('alpha_3_code', $countryCode)->firstOrFail('id');
+                          ->orWhere('alpha_3_code', $countryCode)->firstOrFail('id');
         $countryCities = $this->City::where('country_id', $countryId->id)
                               ->with(['locale' => function($q) use ($request){
                                   $q->where('locale', $request->lang ?: 'en');
+                                  $q->select(['name', 'city_id']);
                               }])
-                              ->get();
+                              ->select(['id'])->get();
         return CountryCitiesResource::collection($countryCities);
     }
 }

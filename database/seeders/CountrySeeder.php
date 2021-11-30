@@ -38,7 +38,6 @@ class CountrySeeder extends Seeder{
                 'name' => 'United States',
                 'currency_short' => 'USD',
                 'currency_long' => 'US Dollars',
-                'language' => 'English'
             ],
             [
                 'id' => 2,
@@ -47,7 +46,6 @@ class CountrySeeder extends Seeder{
                 'name' => 'الولايات المتحدة الأمريكية',
                 'currency_short' => 'دولار',
                 'currency_long' => 'دولار أمريكى',
-                'language' => 'الإنجليزية'
             ],
             [
                 'id' => 3,
@@ -56,7 +54,6 @@ class CountrySeeder extends Seeder{
                 'name' => 'Egypt',
                 'currency_short' => 'EGP',
                 'currency_long' => 'Egyptian Pounds',
-                'language' => 'Arabic'
             ],
             [
                 'id' => 4,
@@ -65,7 +62,6 @@ class CountrySeeder extends Seeder{
                 'name' => 'مصر',
                 'currency_short' => 'ج.م',
                 'currency_long' => 'جنيه مصري',
-                'language' => 'العربية'
             ]
         ]);
     }

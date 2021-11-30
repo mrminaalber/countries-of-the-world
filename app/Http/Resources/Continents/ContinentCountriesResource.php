@@ -21,8 +21,6 @@ class ContinentCountriesResource extends JsonResource{
                 'long' => $this->locale[0]->currency_long,
                 'symbol' => $this->currency_symbol
             ],
-            'capital' => '',
-            'language' => $this->locale[0]->language,
             'area_code' => $this->area_code
         ];
     }

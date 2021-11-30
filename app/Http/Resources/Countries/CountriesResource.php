@@ -21,7 +21,6 @@ class CountriesResource extends JsonResource{
                 'long' => $this->currency_long,
                 'symbol' => $this->info->currency_symbol
             ],
-            'language' => $this->language,
             'area_code' => $this->info->area_code,
             'continent' => $this->info->continent->name
         ];

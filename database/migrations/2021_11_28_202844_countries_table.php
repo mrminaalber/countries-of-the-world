@@ -25,7 +25,6 @@ class CountriesTable extends Migration{
             $table->string('name');
             $table->string('currency_short');
             $table->string('currency_long');
-            $table->string('language');
             $table->unique(['country_id', 'locale']);
             $table->foreign('country_id')->references('id')->on('countries')->cascadeOnDelete();
             $table->foreign('locale')->references('locale')->on('app_languages')->cascadeOnDelete();
