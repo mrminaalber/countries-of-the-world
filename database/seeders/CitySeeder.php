@@ -10,19 +10,28 @@ class CitySeeder extends Seeder{
         DB::table('cities')->insert([
             [
                 'id' => 1,
-                'country_id' => 1
+                'country_id' => 1,
+                'is_capital' => NULL
             ],
             [
                 'id' => 2,
-                'country_id' => 1
+                'country_id' => 1,
+                'is_capital' => NULL
             ],
             [
                 'id' => 3,
-                'country_id' => 2
+                'country_id' => 2,
+                'is_capital' => 1
             ],
             [
                 'id' => 4,
-                'country_id' => 2
+                'country_id' => 2,
+                'is_capital' => NULL
+            ],
+            [
+                'id' => 5,
+                'country_id' => 1,
+                'is_capital' => 1
             ]
         ]);
 
@@ -74,6 +83,18 @@ class CitySeeder extends Seeder{
                 'city_id' => 4,
                 'locale' => 'ar',
                 'name' => 'الجيزة'
+            ],
+            [
+                'id' => 9,
+                'city_id' => 5,
+                'locale' => 'en',
+                'name' => 'Washington'
+            ],
+            [
+                'id' => 10,
+                'city_id' => 5,
+                'locale' => 'ar',
+                'name' => 'واشنطن'
             ]
         ]);
     }

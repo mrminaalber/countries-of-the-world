@@ -36,6 +36,13 @@ class CountriesController extends Controller{
                                       ->select('continent_id', 'name');
                                 }]);
                           }])
+                          ->with(['capital' => function($q) use ($request){
+                            $q->select('id', 'country_id');
+                            $q->with(['locale' => function ($q) use ($request){
+                                $q->where('locale', $request->lang ?: 'en')
+                                  ->select('city_id', 'name');
+                            }]);
+                          }])
                           ->where('locale', $request->lang ?: 'en')
                           ->select(['name', 'country_id', 'currency_short', 'currency_long'])
                           ->orderBy('name')->get();
