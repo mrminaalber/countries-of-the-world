@@ -9,8 +9,6 @@ class CitiesTable extends Migration{
         Schema::create('cities', function (Blueprint $table){
             $table->id();
             $table->bigInteger('country_id')->index()->unsigned();
-            $table->boolean('is_capital')->nullable();
-            $table->unique(['country_id', 'is_capital']);
             $table->foreign('country_id')->references('id')->on('countries')->cascadeOnDelete();
         });
 

@@ -12,8 +12,4 @@ class CountryTranslation extends Model{
     public function info(){
         return $this->belongsTo(Country::class, 'country_id', 'id');
     }
-
-    public function capital(){
-        return $this->hasOne(City::class, 'country_id', 'country_id')->where('is_capital', 1);
-    }
 }

@@ -10,28 +10,23 @@ class CitySeeder extends Seeder{
         DB::table('cities')->insert([
             [
                 'id' => 1,
-                'country_id' => 1,
-                'is_capital' => NULL
+                'country_id' => 1
             ],
             [
                 'id' => 2,
-                'country_id' => 1,
-                'is_capital' => NULL
+                'country_id' => 1
             ],
             [
                 'id' => 3,
-                'country_id' => 2,
-                'is_capital' => 1
+                'country_id' => 2
             ],
             [
                 'id' => 4,
-                'country_id' => 2,
-                'is_capital' => NULL
+                'country_id' => 2
             ],
             [
                 'id' => 5,
-                'country_id' => 1,
-                'is_capital' => 1
+                'country_id' => 1
             ]
         ]);
 
