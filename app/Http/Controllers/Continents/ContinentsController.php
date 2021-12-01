@@ -45,7 +45,7 @@ class ContinentsController extends Controller{
                                    ->select([
                                        'id', 'alpha_2_code', 'alpha_3_code', 'area_code',
                                        'currency_symbol', 'flag_png', 'flag_svg', 'capital_id'
-                                   ])->orderBy('name')->get();
+                                   ])->get();
         return ContinentCountriesResource::collection($continentCountries);
     }
 }
