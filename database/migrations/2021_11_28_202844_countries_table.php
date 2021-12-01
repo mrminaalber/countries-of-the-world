@@ -15,6 +15,7 @@ class CountriesTable extends Migration{
             $table->string('currency_symbol');
             $table->string('flag_png');
             $table->string('flag_svg');
+            $table->bigInteger('capital_id')->unique()->unsigned()->nullable();
             $table->foreign('continent_id')->references('id')->on('continents')->cascadeOnDelete();
         });
 

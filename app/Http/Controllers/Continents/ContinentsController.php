@@ -38,9 +38,13 @@ class ContinentsController extends Controller{
                                         $q->where('locale', $request->lang ?: 'en');
                                         $q->select(['name', 'country_id', 'currency_short','currency_long']);
                                    }])
+                                   ->with(['capital' => function($q) use ($request){
+                                        $q->where('locale', $request->lang ?: 'en');
+                                        $q->select('city_id', 'name');
+                                   }])
                                    ->select([
                                        'id', 'alpha_2_code', 'alpha_3_code', 'area_code',
-                                       'currency_symbol', 'flag_png', 'flag_svg'
+                                       'currency_symbol', 'flag_png', 'flag_svg', 'capital_id'
                                    ])->get();
         return ContinentCountriesResource::collection($continentCountries);
     }

@@ -28,9 +28,13 @@ class CountriesController extends Controller{
     public function getCountries(Request $request){
         $countries = $this->CountryTranslation::with(['info' => function($q) use ($request){
                                 $q->select(
-                                    'id', 'continent_id', 'alpha_2_code', 'alpha_3_code',
+                                    'id', 'continent_id', 'alpha_2_code', 'alpha_3_code', 'capital_id',
                                     'area_code', 'currency_symbol', 'flag_png', 'flag_svg'
                                 );
+                                $q->with(['capital' => function($q) use ($request){
+                                    $q->where('locale', $request->lang ?: 'en');
+                                    $q->select('city_id', 'name');
+                                }]);
                                 $q->with(['continent' => function($q) use ($request){
                                     $q->where('locale', $request->lang ?: 'en')
                                       ->select('continent_id', 'name');

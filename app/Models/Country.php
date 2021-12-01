@@ -16,4 +16,8 @@ class Country extends Model{
     public function continent(){
         return $this->hasOne(ContinentTranslation::class, 'continent_id', 'continent_id');
     }
+
+    public function capital(){
+        return $this->hasOne(CityTranslation::class, 'city_id', 'capital_id');
+    }
 }

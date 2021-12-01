@@ -8,7 +8,7 @@ class CountriesResource extends JsonResource{
     public function toArray($request){
         return [
             'country' => $this->name,
-            'capital' => '',
+            'capital' => $this->info->capital->name,
             'flags' => [
                 'png' => $this->info->flag_png,
                 'svg' => $this->info->flag_svg,

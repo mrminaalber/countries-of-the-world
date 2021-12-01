@@ -16,7 +16,8 @@ class CountrySeeder extends Seeder{
                 'area_code' => '+1',
                 'currency_symbol' => '$',
                 'flag_png' => 'https://flagcdn.com/w320/us.png',
-                'flag_svg' => 'https://flagcdn.com/us.svg'
+                'flag_svg' => 'https://flagcdn.com/us.svg',
+                'capital_id' => 5
             ],
             [
                 'id' => 2,
@@ -26,7 +27,8 @@ class CountrySeeder extends Seeder{
                 'area_code' => '+20',
                 'currency_symbol' => '£',
                 'flag_png' => 'https://flagcdn.com/w320/eg.png',
-                'flag_svg' => 'https://flagcdn.com/eg.svg'
+                'flag_svg' => 'https://flagcdn.com/eg.svg',
+                'capital_id' => 3
             ]
         ]);
 
